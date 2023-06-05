@@ -141,4 +141,4 @@ end)
 ---
 
 ## License
-[GNU GPL-3.0](https://raw.githubusercontent.com/Supermrk/FF2-API/main/LICENSE?token=GHSAT0AAAAAACDAZIV64HAVRL3K34YT52GQZD56JQA)
+[GNU GPL-3.0](https://raw.githubusercontent.com/Supermrk/FF2-API/main/LICENSE)
