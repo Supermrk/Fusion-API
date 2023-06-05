@@ -40,7 +40,7 @@ local module = {
         HomeTeam = {Abbreviation = "VOID",Name = "NONE",City = "NONE"},
         HomeRank = 0,
         LastPlayID = 0,
-        LastDriveID = 1, --TODO make sure it always starts at 1
+        LastDriveID = 1,
         SwitchedPossession = false
     },
     Values = {
@@ -78,7 +78,7 @@ local module = {
         Quarter = FFValues.Quarter.Value,
         Clock = FFValues.TimerTag.Value,
         Status = FFValues.StatusTag.Value,
-        Possession = true -- Comment: True == Home
+        Possession = true -- True == Home
     },
     OldValues = {
         AwayScore = FFValues.AwayScore.Value,
@@ -409,7 +409,7 @@ Services["Storage"].Remotes.CharacterSoundEvent.OnClientEvent:Connect(function(c
         end
 
         CURRENT_PLAY_INFO.safety = true
-    elseif (text == "I T ' S   G O O D !") then --TODO CHECK IF THIS IS RIGHT
+    elseif (text == "I T ' S   G O O D !") then
         local type = 1
 
         if (FFValues.Kicker.Value) then
@@ -444,7 +444,7 @@ Services["Storage"].Remotes.CharacterSoundEvent.OnClientEvent:Connect(function(c
         else
             CURRENT_PLAY_INFO.extra_point_result = module.Enums.FieldGoalResult.INCOMPLETE
         end
-    elseif (text == "2 - P T   G O O D") then  --TODO CHECK IF THIS IS RIGHT
+    elseif (text == "2 - P T   G O O D") then
         if (team.Name == FFValues.Away.Value.Name) then
             module.Events.TwoPoint:Fire(false)
             module.LastEvents.TwoPoint = tick()
