@@ -1,4 +1,6 @@
-<h1 align="center">FusionAPI</h4>
+<div align="center">
+	<img width=400 src="https://raw.githubusercontent.com/Supermrk/FusionAPI/main/images/Logo.png" alt="Logo" />
+</div>
 <h4 align="center">A script that takes in and processes data from the Roblox game <a href="https://www.roblox.com/games/8204899140/Football-Fusion-2">Football Fusion</a> for use in streaming.</h4>
 <div align="center">
 	<a href="https://github.com/Supermrk/FusionAPI"><img src="https://shields.io/github/all-contributors/Supermrk/FusionAPI/main" alt="Contributors" /></a>
