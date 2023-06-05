@@ -1,5 +1,5 @@
 <h1 align="center">FF2-API</h4>
-<h4 align="center">An advanced script that takes in and processes data from the Roblox game <a href="https://www.roblox.com/games/8204899140/Football-Fusion-2">Football Fusion</a>.</h4>
+<h4 align="center">A script that takes in and processes data from the Roblox game <a href="https://www.roblox.com/games/8204899140/Football-Fusion-2">Football Fusion</a> for use in streaming.</h4>
 <div align="center">
 	<a href="https://github.com/Supermrk/FF2-API"><img src="https://shields.io/github/all-contributors/Supermrk/FF2-API/main" alt="Contributors" /></a>
 	<a href="https://github.com/Supermrk/FF2-API"><img src="https://img.shields.io/github/stars/Supermrk/FF2-API" alt="Stars" /></a>
