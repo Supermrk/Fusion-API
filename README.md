@@ -25,7 +25,7 @@
 ## Features
 * Custom Player, Replay, and Kicker Jerseys
 * Custom Field and Stadium Decals
-* Advanced Data Collection (Win %, TOP, Play-by-Play Stats, Drive Stats, Player Stats)
+* Advanced Data Collection (Win %, TOP, Play-by-Play Stats, Drive Stats, Player Stats, & more)
 * Discord Webhook Updates
 * Twitch Chat Score Updates
 * Firebase Realtime Updates Integration
