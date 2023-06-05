@@ -12,6 +12,8 @@ The following is specificially programmed in here:
 
 Credit to Arvoria for creating the Roblox Firebase Wrapper. Below is a link to the github repository
 https://github.com/Arvoria/Roblox-Firebase
+
+Created by Supermrk (@supermrk)
 ]]
 
 local Services = {
@@ -28,10 +30,10 @@ repeat wait() until game:IsLoaded()
 --local FFAPI = require(script.FFAPI) For debugging purposes
 --local Utilities = require(script.Utilities) For debugging purposes
 --local Enviroment = require(script.Enviroment) For debugging purposes
-local FFAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FF2-API/main/src/Modules/FFAPI.lua', true))()
-local Utilities = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FF2-API/main/src/Modules/Enviroment.lua', true))()
-local Enviroment = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FF2-API/main/src/Modules/Utilities.lua', true))()
-local Robase = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FF2-API/main/src/Modules/Robase.lua', true))()
+local FFAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/FFAPI.lua', true))()
+local Utilities = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/Enviroment.lua', true))()
+local Enviroment = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/Utilities.lua', true))()
+local Robase = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/Robase.lua', true))()
 
 -----------------------------------------------------------------------
 -- Script API Declarations
