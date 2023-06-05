@@ -143,6 +143,7 @@ end)
 * Supermrk - Lead Developer.
 * Hayden - Helped with creating the College Teams database and testing.
 * Alfredo - Helped with testing.
+* Woofy - For helping with the camera features.
 * Vol - For giving us permission to use these scripts, as well as giving us tons of Primetime and Playoff games.
 * XSTNS & Bayton - For creating Football Fusion and for giving us permission to use scripts for the purpose of streaming.
 * Arvoria - For creating the Firebase Roblox Wrapper, Robase.
