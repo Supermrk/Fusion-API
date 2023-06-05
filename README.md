@@ -5,6 +5,7 @@
 <div align="center">
 	<a href="https://github.com/Supermrk/FusionAPI"><img src="https://img.shields.io/github/contributors/Supermrk/FusionAPI" alt="Contributors" /></a>
 	<a href="https://github.com/Supermrk/FusionAPI"><img src="https://img.shields.io/github/stars/Supermrk/FusionAPI" alt="Stars" /></a>
+	<a href="https://raw.githubusercontent.com/Supermrk/FusionAPI/main/LICENSE"><img src="https://img.shields.io/github/license/Supermrk/FusionAPI" alt="License" /></a>
 	<a href="https://www.twitch.tv/rosportprogrammingnetwork"><img src="https://img.shields.io/twitch/status/rosportprogrammingnetwork" alt="RSPN Twitch" /></a>
 	<a href="https://discord.com/invite/rspn"><img src="https://shields.io/discord/1019419802399416350?label=Discord&color=blue" alt="RSPN Discord" /></a>
 </div>
