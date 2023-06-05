@@ -60,8 +60,8 @@ If you're wanting to use any of the Twitch specific features, then the second ti
 ## Using the API
 If you're not interested in using the pre-made central script and want to create your own, using the modules as APIs is simple.
 
-### Initialising the APIs:
-**Required:** You must initialise any modules you wish to use.
+### Initializing the APIs:
+**Required:** You must initialize any modules you wish to use.
  ```lua
 -- You may replace the URL with a raw version of your script
 local FFAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/FFAPI.lua', true))()
