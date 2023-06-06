@@ -9,7 +9,6 @@
 	<a href="https://www.twitch.tv/rosportprogrammingnetwork"><img src="https://img.shields.io/twitch/status/rosportprogrammingnetwork" alt="RSPN Twitch" /></a>
 	<a href="https://discord.com/invite/rspn"><img src="https://shields.io/discord/1019419802399416350?label=Discord&color=blue" alt="RSPN Discord" /></a>
 </div>
-<p align="center">Created by Supermrk</p>
 
 <p align="center">
   <a href="#about">About</a> •
