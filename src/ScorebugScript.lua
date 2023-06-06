@@ -22,6 +22,16 @@ local Services = {
     HTTP = game:GetService("HttpService")
 }
 
+local Settings = {
+    TWITCH_CLIENT_ID = "CLIENT_ID_HERE",
+    TWITCH_CLIENT_SECRET = "CLIENT_SECRET_HERE",
+    FIREBASE_DEFAULT_SCOPE = "FIREBASE_DEFAULT_SCOPE_HERE",
+    FIREBASE_AUTH_TOKEN == "FIREBASE_AUTH_TOKEN_HERE",
+    DISCORD_WEBHOOK_URL = "DISCORD_WEBHOOK_URL_HERE",
+    CLIPS_DATABASE_API_URL = "CLIPS_DATABASE_API_URL_HERE",
+    STATS_DATABASE_API_URL = "STATS_DATABASE_API_URL_HERE"
+}
+
 repeat wait() until game:IsLoaded()
 
 -----------------------------------------------------------------------
@@ -64,8 +74,8 @@ local Settings = {
     Config = {},
     Twitch = {
         Authorization = nil,
-        ClientId = "CLIENT_ID_HERE",
-        ClientSecret = "CLIENT_SECRET_HERE",
+        ClientId = Settings.TWITCH_CLIENT_ID,
+        ClientSecret = Settings.TWITCH_CLIENT_SECRET,
         UserID = "",
         LiveChannels = {}
     },
@@ -73,8 +83,8 @@ local Settings = {
     HomeVariant = "Normal"
 }
 
-Robase.DefaultScope = "DEFAULT_SCOPE_HERE"
-Robase.AuthenticationToken = "AUTH_TOKEN_HERE"
+Robase.DefaultScope = Settings.FIREBASE_DEFAULT_SCOPE
+Robase.AuthenticationToken = Settings.FIREBASE_AUTH_TOKEN
 local Database = Robase:GetFirebase("")
 
 -----------------------------------------------------------------------
@@ -103,7 +113,7 @@ FFAPI.Events.PlayFinishedEvent.Event:Connect(function(playData)
                         local data = Services["HTTP"]:JSONDecode(response.Body)
                         if (#data.data > 0 and data.data[1].id) then
                             response = http({
-                                Url = "DATABASE_API_PUT_URL_HERE",
+                                Url = Settings.CLIPS_DATABASE_API_URL,
                                 Method = "PUT",
                                 Headers = {
                                     ["Content-Type"] = "application/json"
@@ -161,7 +171,7 @@ FFAPI.Events.PlayFinishedEvent.Event:Connect(function(playData)
                 }}
             }
             local request = http({
-                Url = "DISCORD_WEBHOOK_URL_HERE",
+                Url = Settings.DISCORD_WEBHOOK_URL,
                 Method = "POST",
                 Headers = {
                     ["Content-Type"] = "application/json"
@@ -271,7 +281,7 @@ FFAPI.Events.GameEndEvent.Event:Connect(function(homeWin)
         if (FFAPI.Values.AwayInfo.TOP > 300 and FFAPI.Values.HomeInfo.TOP > 300) then
             local succ = pcall(function()
                 local request = http({
-                    Url = "STATS_DATABASE_API_URL_HERE" .. string.upper(Settings.Config.GameInfo.Away) .. "-" .. string.upper(Settings.Config.GameInfo.Home) .. "-" .. string.upper(Settings.Config.GameInfo.Series) .. "-" .. string.upper(Settings.Config.GameInfo.Season) .. ".json",
+                    Url = Settings.STATS_DATABASE_API_URL .. string.upper(Settings.Config.GameInfo.Away) .. "-" .. string.upper(Settings.Config.GameInfo.Home) .. "-" .. string.upper(Settings.Config.GameInfo.Series) .. "-" .. string.upper(Settings.Config.GameInfo.Season) .. ".json",
                     Method = "PUT",
                     Headers = {
                         ["Content-Type"] = "application/json"

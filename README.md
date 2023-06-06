@@ -55,6 +55,8 @@ To use this script, just run the `ScorebugScript.lua` file under the `src` folde
 
 If you're wanting to use any of the Twitch specific features, then the second time you run the script a URL will be copied to your clipboard so you can complete the OAuth2 process. Also, make sure to change the Twitch Channels table under the `Utilities.lua` folder.
 
+**Note: Various features in the demo ScorebugScript.lua require sensititve information. These can be filled out in the "Settings" table at the top of the script.**
+
 ---
 
 ## Using the API
