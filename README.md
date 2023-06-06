@@ -1,7 +1,7 @@
 <div align="center">
 	<img width=400 src="https://raw.githubusercontent.com/Supermrk/FusionAPI/main/images/Logo.png" alt="Logo" />
 </div>
-<h4 align="center">A script that takes in and processes data from the Roblox game <a href="https://www.roblox.com/games/8204899140/Football-Fusion-2">Football Fusion</a> for use in streaming.</h4>
+<h4 align="center">A script that takes in and processes data from the Roblox game <a href="https://www.roblox.com/games/8204899140/Football-Fusion-2">Football Fusion</a>.</h4>
 <div align="center">
 	<a href="https://github.com/Supermrk/FusionAPI"><img src="https://img.shields.io/github/contributors/Supermrk/FusionAPI" alt="Contributors" /></a>
 	<a href="https://github.com/Supermrk/FusionAPI"><img src="https://img.shields.io/github/stars/Supermrk/FusionAPI" alt="Stars" /></a>
