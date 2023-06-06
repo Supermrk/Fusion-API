@@ -137,6 +137,8 @@ local Enviroment = loadstring(game:HttpGet('https://raw.githubusercontent.com/Su
 end)
 ```
 
+**For more examples on how to use the API, check out the [Examples Folder](examples)**
+
 ---
 
 ## Credits
