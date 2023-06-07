@@ -1,4 +1,6 @@
 --[[
+PLEASE NOTE: THIS SCRIPT IS FOR DEMO PURPOSES ONLY AND SHOWS HOW TO PUT THE MULTIPLE MODULES TOGETHER
+
 This is the main script file that puts together all of the individual features.
 
 The following is specificially programmed in here:
