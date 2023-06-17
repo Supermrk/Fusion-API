@@ -20,7 +20,7 @@ local Services = {
 -----------------------------------------------------------------------
 -- Script API Declarations
 -----------------------------------------------------------------------
-local http = syn.request or http.request
+local http = request or (syn and syn.request) or (http and http.request) or http_request
 
 -----------------------------------------------------------------------
 -- Final
