@@ -20,7 +20,7 @@ local Services = {
 -----------------------------------------------------------------------
 -- Script API Declarations
 -----------------------------------------------------------------------
-local http = request or (syn and syn.request) or (http and http.request) or http_request
+local request = request or (syn and syn.request) or (http and http.request) or http_request
 
 -----------------------------------------------------------------------
 -- Final
@@ -262,12 +262,12 @@ function GetWinPercentage(team : string)
 
     if (isHome) then
         local vegasLine = (module.Settings.HomeRank-module.Settings.AwayRank)/4
-        data = http.request({
+        data = request({
             Url = "https://www.pro-football-reference.com/boxscores/win_prob.cgi?request=1&score_differential=" .. FFValues.HomeScore.Value - FFValues.AwayScore.Value .. "&vegas_line=" .. vegasLine .. "&quarter=" .. FFValues.Quarter.Value .."&minutes=" .. minutes .. "&seconds=" .. seconds .. "&field=" .. field .. "&yds_from_goal=" .. fieldPos .."&yds_to_go=" .. yardsToGo,
         })
     else
         local vegasLine = (module.Settings.AwayRank-module.Settings.HomeRank)/4
-        data = http.request({
+        data = request({
             Url = "https://www.pro-football-reference.com/boxscores/win_prob.cgi?request=1&score_differential=" .. FFValues.AwayScore.Value - FFValues.HomeScore.Value .. "&vegas_line=" .. vegasLine .. "&quarter=" .. FFValues.Quarter.Value .."&minutes=" .. minutes .. "&seconds=" .. seconds .. "&field=" .. field .. "&yds_from_goal=" .. fieldPos .."&yds_to_go=" .. yardsToGo
         })
     end
