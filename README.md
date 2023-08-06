@@ -46,7 +46,7 @@ If you're interested in how I wrote certain parts of the script, or have another
 ---
 
 ## Requirements
-- A Roblox Script Injector - The only confirmed working injectors are either Synapse X or one that follows the [Unified Naming Convention](https://scriptunc.org/).
+- A Roblox Script Injector - The only confirmed working injectors are either Synapse X or one that follows the [Unified Naming Convention](https://github.com/unified-naming-convention/NamingStandard).
 
 ---
 
