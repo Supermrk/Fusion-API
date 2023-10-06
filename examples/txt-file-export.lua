@@ -2,7 +2,7 @@
 -- Modules
 -----------------------------------------------------------------------
 local FFAPI = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/FFAPI.lua', true))()
-local Utilities = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/Enviroment.lua', true))()
+local Utilities = loadstring(game:HttpGet('https://raw.githubusercontent.com/Supermrk/FusionAPI/main/src/Modules/Utilities.lua', true))()
 
 -----------------------------------------------------------------------
 -- Setup
