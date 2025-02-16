@@ -25,7 +25,7 @@ local request = request or (syn and syn.request) or (http and http.request) or h
 -----------------------------------------------------------------------
 -- Final
 -----------------------------------------------------------------------
-local FFValues = Services["Storage"].Values
+local FFValues = Services["Storage"].Flags
 local LocalPlayer = Services["Players"].LocalPlayer
 
 
