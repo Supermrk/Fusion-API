@@ -35,7 +35,7 @@ local getcustomasset = getsynasset or getcustomasset
 -----------------------------------------------------------------------
 -- Final
 -----------------------------------------------------------------------
-local FFValues = Services["Storage"].Values
+local FFValues = Services["Storage"].Flags
 
 -----------------------------------------------------------------------
 -- Static
