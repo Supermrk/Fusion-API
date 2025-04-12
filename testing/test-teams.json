@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "Thunderhawks",
+    "City": "Phoenix",
+    "Abbreviation": "PHX"
+  },
+  {
+    "Name": "Frostbites",
+    "City": "Anchorage",
+    "Abbreviation": "ANC"
+  },
+  {
+    "Name": "Ironclads",
+    "City": "Richmond",
+    "Abbreviation": "RIC"
+  },
+  {
+    "Name": "Stormfangs",
+    "City": "Salem",
+    "Abbreviation": "SLM"
+  },
+  {
+    "Name": "Redcaps",
+    "City": "Augusta",
+    "Abbreviation": "AUG"
+  }
+]
