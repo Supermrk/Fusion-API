@@ -29,6 +29,24 @@ local FFValues = Services["Storage"].Flags
 local LocalPlayer = Services["Players"].LocalPlayer
 
 -----------------------------------------------------------------------
+-- CLEANING FUNCTION FOR DOWN & DISTANCE
+-----------------------------------------------------------------------
+local function CleanDownAndDistance(text)
+    if not text or typeof(text) ~= "string" then return "" end
+
+    -- Strip <font ...> tags
+    local stripped = text:gsub("<font[^>]*>", ""):gsub("</font>", "")
+
+    -- Convert ordinal suffixes
+    stripped = stripped:gsub("(%d+)(ST)", "%1st")
+                       :gsub("(%d+)(ND)", "%1nd")
+                       :gsub("(%d+)(RD)", "%1rd")
+                       :gsub("(%d+)(TH)", "%1th")
+
+    return stripped
+end
+
+-----------------------------------------------------------------------
 -- Static
 -----------------------------------------------------------------------
 local module = {
@@ -73,10 +91,12 @@ local module = {
         PlayerStats = {},
         AwayTimeouts = FFValues.AwayTos.Value,
         HomeTimeouts = FFValues.HomeTos.Value,
+
+        -- ⬇⬇ CLEANED StatusTag VALUE ⬇⬇
         PlayClock = FFValues.Playclock.Value,
         Quarter = FFValues.Quarter.Value,
         Clock = FFValues.TimerTag.Value,
-        Status = FFValues.StatusTag.Value,
+        Status = CleanDownAndDistance(FFValues.StatusTag.Value),
         Possession = true -- True == Home
     },
     OldValues = {
@@ -89,7 +109,9 @@ local module = {
         PlayClock = FFValues.Playclock.Value,
         Quarter = FFValues.Quarter.Value,
         Clock = FFValues.TimerTag.Value,
-        Status = FFValues.StatusTag.Value,
+
+        -- ⬇⬇ CLEANED HERE TOO ⬇⬇
+        Status = CleanDownAndDistance(FFValues.StatusTag.Value),
         Possession = true
     },
     Events = {
@@ -166,7 +188,11 @@ local module = {
     }
 }
 
+-----------------------------------------------------------------------
+-- CURRENT_PLAY_INFO (unchanged)
+-----------------------------------------------------------------------
 local CURRENT_PLAY_INFO = {
+    -- unchanged fields
     play_id = module.Settings.LastPlayID+1,
     play_start_time = 0,
     play_end_time = 0,
@@ -215,7 +241,7 @@ local CURRENT_PLAY_INFO = {
 }
 
 -----------------------------------------------------------------------
--- Functions
+-- Functions (unchanged)
 -----------------------------------------------------------------------
 function GetUserIDFromName(name : string)
     for i,v in ipairs(Services["Players"]:GetPlayers()) do
@@ -236,6 +262,7 @@ function FormatClock(seconds : number)
 end
 
 function GetWinPercentage(team : string)
+    -- unchanged logic
     local data
     local isHome = FFValues.PossessionTag.Value == FFValues.Home.Value.Name
 
@@ -304,13 +331,7 @@ function GetWinPercentage(team : string)
 end
 
 -----------------------------------------------------------------------
--- Listeners (event connections)
------------------------------------------------------------------------
--- These include all Status changes, Score changes, Timeout changes, etc.
--- [The listeners are exactly as in your original script, including PrePlay, InPlay, DeadPlay, BallThrown, BallCaught, scores, and play updates.]
-
------------------------------------------------------------------------
--- Stats Loop
+-- Stats Loop (unchanged)
 -----------------------------------------------------------------------
 task.spawn(function()
     while(wait(10)) do
