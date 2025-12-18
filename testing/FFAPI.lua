@@ -914,10 +914,20 @@ FFValues.TimerTag.Changed:Connect(function(new)
     module.Values.CurrentDrive.TOP = module.Values.CurrentDrive.TOP+1
 end)
 
-FFValues.StatusTag.Changed:Connect(function(new)
-    if type(new) == "string" then
-        new = new:gsub("<font.-?>", ""):gsub("</font>", "")
+
+local function stripFontTags(text)
+    if type(text) ~= "string" then
+        return text
     end
+
+    text = text:gsub("<%s*font.-%s*>", "")
+    text = text:gsub("<%s*/%s*font%s*>", "")
+    return text
+end
+
+-- Existing listener
+FFValues.StatusTag.Changed:Connect(function(new)
+    new = stripFontTags(new)
 
     module.Events.StatusChange:Fire(new, module.Values.Status)
 
