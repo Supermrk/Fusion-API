@@ -36,8 +36,10 @@ local module = {
     Settings = {
         GameID = nil,
         AwayTeam = {Abbreviation = "VOID",Name = "NONE",City = "NONE"},
+        AwayCity = {City = "NONE"},
         AwayRank = 0,
         HomeTeam = {Abbreviation = "VOID",Name = "NONE",City = "NONE"},
+        HomeCity = {City = "NONE"},
         HomeRank = 0,
         LastPlayID = 0,
         LastDriveID = 1,
@@ -914,27 +916,12 @@ FFValues.TimerTag.Changed:Connect(function(new)
     module.Values.CurrentDrive.TOP = module.Values.CurrentDrive.TOP+1
 end)
 
-
-local function stripFontTags(text)
-    if type(text) ~= "string" then
-        return text
-    end
-
-    text = text:gsub("<%s*font.-%s*>", "")
-    text = text:gsub("<%s*/%s*font%s*>", "")
-    return text
-end
-
--- Existing listener
 FFValues.StatusTag.Changed:Connect(function(new)
-    new = stripFontTags(new)
-
     module.Events.StatusChange:Fire(new, module.Values.Status)
 
     module.OldValues.Status = module.Values.Status
     module.Values.Status = new
 end)
-
 
 FFValues.PossessionTag.Changed:Connect(function(new)
     if (new == FFValues.Away.Value.Name) then
