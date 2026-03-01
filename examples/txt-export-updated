@@ -1,0 +1,46 @@
+game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Scoreboard.Visible = false
+game:GetService("Players").LocalPlayer.PlayerGui.MainGui.LeftMenu.Visible = false
+
+
+local function formatStatus(text)
+	if type(text) ~= "string" then return text end
+	text = text:gsub("<%s*font.-%s*>", ""):gsub("<%s*/%s*font%s*>", "")
+	text = text:gsub("(%d)(ST)", "%1st")
+	text = text:gsub("(%d)(ND)", "%1nd")
+	text = text:gsub("(%d)(RD)", "%1rd")
+	text = text:gsub("(%d)(TH)", "%1th")
+	return text
+end
+
+function FormatClock(seconds : number)
+    local minutes = math.floor(seconds / 60)
+    seconds = seconds % 60
+    return string.format("%d:%02d", minutes, seconds)
+end
+
+function FormatNumber(number : number)
+    if (number == 1) then
+        return "1st"
+    elseif (number == 2) then
+        return "2nd"
+    elseif (number == 3) then
+        return "3rd"
+    elseif (number == 4) then
+        return "4th"
+    elseif (number >= 5) then
+        return "OT " .. number-4
+    end
+end
+
+local function Flags(path, file, format)
+    pcall(function() local v = game:GetService("ReplicatedStorage"); for p in path:gmatch("[^.]+") do v = v[p] end writefile(file, format and format(v.Value) or tostring(v.Value)) v.Changed:Connect(function(n) pcall(writefile, file, format and format(n) or tostring(n)) end) end)
+end
+
+
+Flags("Flags.AwayScore", "Away-Score.txt")
+Flags("Flags.TimerTag", "Clock.txt", FormatClock)
+Flags("Flags.Quarter", "Quarter.txt", FormatNumber)
+Flags("Flags.StatusTag", "Status.txt", formatStatus)
+Flags("Flags.HomeScore", "Home-Score.txt")
+Flags("Flags.Playclock", "PlayClock.txt", function(p) return ":" .. tostring(p) end)
+Flags("Flags.TimerTag", "Full-Time.txt", function(p) return FormatNumber(game:GetService("ReplicatedStorage").Flags.Quarter.Value) .. " " .. FormatClock(p) end)
