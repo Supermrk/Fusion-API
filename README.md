@@ -21,6 +21,10 @@
 
 ---
 
+**Note: This project is no longer actively being maintained and is not guaranteed to work. It is highly recommended not to use any of the code within this module, but if you do, use it at your own risk.**
+
+---
+
 ## Features
 * Export Game & Scorebug Values to Text Files
 * Custom Player, Replay, and Kicker Jerseys
